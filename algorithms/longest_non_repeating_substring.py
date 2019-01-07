@@ -40,10 +40,10 @@ def longest_non_repeating_substring_optimized_2(s):  # O(n)
     i = 0
     char_to_index = {}
 
-    for j in range(len(s)):
-        if s[j] in char_to_index:
-            i = max(char_to_index[s[j]], i)
-        char_to_index[s[j]] = j + 1
+    for j, c in enumerate(s):
+        if c in char_to_index:
+            i = max(char_to_index[c], i)
+        char_to_index[c] = j + 1
         longest = max(longest, j + 1 - i)
 
     return longest
